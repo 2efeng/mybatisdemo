@@ -6,13 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class UserService  {
 
     @Autowired
     private  Sys_UserMapper userMapper;
 
     public Sys_User Sel(int id){
         return userMapper.Sel(id);
+    }
+
+    public Sys_User GetLast(){
+        return userMapper.GetLast();
+    }
+
+    public int  add(Sys_User user) {
+        return userMapper.add(user);
     }
 }
 

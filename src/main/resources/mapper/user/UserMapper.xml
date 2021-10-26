@@ -8,4 +8,21 @@
         select * from Sys_User where id = #{id}
     </select>
 
+    <select id="GetLast" resultType="com.hzf.mybatisdemo.entity.Sys_User">
+        select * from Sys_User order by id desc limit 1
+    </select>
+
+    <insert id="add" parameterType="com.hzf.mybatisdemo.entity.Sys_User" useGeneratedKeys="true" keyProperty="id">
+        insert into Sys_User(name,password,phone,broth,create_time,update_time)
+        values(#{name}, #{password}, #{phone}, #{broth}, #{create_time}, #{update_time})
+    </insert>
+
+<!--    <insert id="add2" parameterType="com.hzf.mybatisdemo.entity.Sys_User">-->
+<!--        <selectKey resultType="_long" keyProperty="id" order="AFTER">-->
+<!--            select @@IDENTITY as id-->
+<!--        </selectKey>-->
+<!--        insert into TStudent(name, age) values(#{name}, #{age})-->
+<!--    </insert>-->
+
+
 </mapper>

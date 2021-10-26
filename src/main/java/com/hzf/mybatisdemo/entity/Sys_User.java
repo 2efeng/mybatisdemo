@@ -13,6 +13,17 @@ import java.util.Date;
 @Table(name = "Sys_User")
 public class Sys_User  extends BaseModel {
 
+    public Sys_User(){}
+
+    public Sys_User(String name, String password, String phone, Date broth, Date create_time, Date update_time) {
+        this.name = name;
+        this.password = password;
+        this.phone = phone;
+        this.broth = broth;
+        this.create_time = create_time;
+        this.update_time = update_time;
+    }
+
     @Column(name = "id",type = MySqlTypeConstant.INT,length = 11,isKey = true,isAutoIncrement = true)
     private int id;
 
