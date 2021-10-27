@@ -7,11 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan({"com.hzf.mybatisdemo.mapper","com.gitee.sunchenbin.mybatis.actable.dao.*"})
 @SpringBootApplication
-public class MybatisdemoApplication {
+public class MyBatisDemoApplication  {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MybatisdemoApplication.class, args);
+		SpringApplication.run(MyBatisDemoApplication.class, args);
 	}
+
 
 
 

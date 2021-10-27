@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hzf.mybatisdemo.mapper.Sys_RoleMapper">
+
+    <select id="Sel" resultType="com.hzf.mybatisdemo.entity.Sys_Role">
+        select * from Sys_Role where id = #{id}
+    </select>
+
+    <select id="SelByCode" resultType="com.hzf.mybatisdemo.entity.Sys_Role">
+        select * from Sys_Role where code = #{code}
+    </select>
+
+    <insert id="add" parameterType="com.hzf.mybatisdemo.entity.Sys_Role" useGeneratedKeys="true" keyProperty="id">
+        insert into Sys_Role(name,code,create_time,update_time)
+        values(#{name}, #{code},#{create_time}, #{update_time})
+    </insert>
+
+</mapper>

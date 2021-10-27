@@ -21,12 +21,12 @@ public class UserController {
     }
 
     @RequestMapping("addUser")
-    public String AddUser(){
+    public Sys_User AddUser(){
         Sys_User user =  userService.GetLast();
         Date dtNow = new Date();
         String currIdx = String.valueOf(user.getId() + 1);
         Sys_User data = new Sys_User(currIdx,currIdx,currIdx,dtNow,dtNow,dtNow);
-        userService.add(data);
-        return data.toString();
+        int currId = userService.add(data);
+        return data;
     }
 }

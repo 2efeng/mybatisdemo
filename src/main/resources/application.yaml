@@ -1,5 +1,8 @@
 server:
   port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
 
 mybatis:
   database:
@@ -7,11 +10,17 @@ mybatis:
   model:
     pack: com.hzf.mybatisdemo.entity
   table:
-    auto: update
+    auto: none
   mapperLocations[0]: classpath*:com/gitee/sunchenbin/mybatis/actable/mapping/*/*.xml
   mapperLocations[1]: classpath:mapper/**/*.xml
 
 spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mybatisdemo
